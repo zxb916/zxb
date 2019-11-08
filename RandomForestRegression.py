@@ -134,12 +134,14 @@ def testHousing():
         baggingData, bagginglabels = baggingDataSet(df)
         decisionTree = regressionTree(baggingData, bagginglabels)
         treeList.append(decisionTree)
-    print treeList
+    print(treeList)
     # 对测试样本求预测值
     labelPred = []
     for tree in treeList:
         testData = [0.38735,0,25.65,0,0.581,5.613,95.6,1.7572,2,188,19.1,359.29,27.26]
         label = treeClassify(tree, labels[:-1], testData)
         labelPred.append(label)
-    print "The predicted value is: {}".format(np.mean(labelPred))
+    print("The predicted value is: {}".format(np.mean(labelPred)))
+
+
 testHousing()
